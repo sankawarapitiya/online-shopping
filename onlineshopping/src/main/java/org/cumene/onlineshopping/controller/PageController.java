@@ -12,7 +12,34 @@ public class PageController {
 	@RequestMapping(value = { "/", "/home", "/index" })
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", "Welcome to web mvc");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickHome", true);
+		return mv;
+	}
+	
+
+	@RequestMapping(value = { "/about" })
+	public ModelAndView about() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "About us");
+		mv.addObject("userClickAbout", true);
+		return mv;
+	}
+	
+	@RequestMapping(value = { "/contact" })
+	public ModelAndView contact() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Contact");
+		mv.addObject("userClickContact", true);
+		return mv;
+	}
+	
+	
+	@RequestMapping(value = { "/services" })
+	public ModelAndView service() {
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Service");
+		mv.addObject("userClickService", true);
 		return mv;
 	}
 	
@@ -24,12 +51,12 @@ public class PageController {
 //	}
 	
 	
-	@RequestMapping(value="/test/{greeting}")
-	public ModelAndView test(@PathVariable("greeting")String greeting){
-		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", greeting);
-		return mv;
-	}
+//	@RequestMapping(value="/test/{greeting}")
+//	public ModelAndView test(@PathVariable("greeting")String greeting){
+//		ModelAndView mv = new ModelAndView("page");
+//		mv.addObject("greeting", greeting);
+//		return mv;
+//	}
 	
 	
 
